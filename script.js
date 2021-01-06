@@ -23,7 +23,7 @@ var uppercase = confirm ("Do you want to add uppercase characters? If so, press 
 var lowercase = confirm ("Do you want to add lowercase characters? If so, press Okay");
 var numb = confirm ("Do you want to add numbers? If so, press Okay");
 var spec = confirm ("Do you want to add special characters? If so, press Okay");
-var length = prompt ("How long do you need your password to be?");
+var pwLength = prompt ("How long do you need your password to be?");
 
 // Making sure that the responses are correctly storing
 console.log(uppercase);
@@ -33,8 +33,8 @@ console.log(spec);
 
 // Checking to see if the user's input is a string or a number
 var length = parseInt(length);
-console.log(length);
-console.log(typeof(length));
+console.log(pwLength);
+console.log(typeof(pwLength));
 
 // Character Variables
 var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -42,7 +42,7 @@ var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 
 
 // for looping length times random numbers
-  for (var i = 0; i < length; i++) {
+  for (var i = 0; i < pwLength; i++) {
     var numbChar = Math.floor(Math.random() * 10)
     console.log(numbChar);
    }
@@ -56,13 +56,13 @@ var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
   //  console.log("------");
 
    // for looping length times random lower case letters
-   for (var i = 0; i < length; i++) {
+   for (var i = 0; i < pwLength; i++) {
      var newLowerChar = lowerChar[Math.floor(Math.random() * lowerChar.length)];
     console.log(newLowerChar);
    }
 
    // for looping length times random lower case letters
-   for (var i = 0; i < length; i++) {
+   for (var i = 0; i < pwLength; i++) {
     var newUpperChar = upperChar[Math.floor(Math.random() * upperChar.length)];
    console.log(newUpperChar);
    }
@@ -74,3 +74,13 @@ var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
    }
 
    console.log(randomSymbol());
+
+   //Length for password with alerts!
+    if (pwLength <= 7)
+      alert("Password must be at least 8 characters!");
+
+      else if (pwLength > 128)
+      alert("Password must be less than 128 characters!");
+
+      else
+      alert("Perfect! Thanks!");
